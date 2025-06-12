@@ -1,0 +1,30 @@
+package pet.store.controllers;
+
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+import pet.store.controller.model.PetStoreData;
+import pet.store.service.PetStoreService;
+
+@RestController
+@RequestMapping("/pet_store")
+@Slf4j
+public class PetStoreController {
+    @Autowired
+    private PetStoreService petStoreService;
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public PetStoreData createPetStore(@RequestBody PetStoreData petStoreData) {
+       // log.info("Creating pet store: {}", petStoreData);
+        return petStoreService.savePetStore(petStoreData);
+    }
+
+    @PutMapping("/{id}")
+    public PetStoreData updatePetStore(@PathVariable Long id, @RequestBody PetStoreData petStoreData) {
+       // log.info("Updating pet store with ID: {}", id);
+    	petStoreData.id = id;
+        return petStoreService.savePetStore(petStoreData);
+    }
+}

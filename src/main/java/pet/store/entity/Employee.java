@@ -10,9 +10,9 @@ import lombok.ToString;
 public class Employee {
 	    @Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	    private Long id;
-	    private String employeeName; // Assuming this is the name of the employee
-	    private String employeeEmail; // Assuming this is the email of the employee
+	    public Long id;
+	    public String employeeName; 
+	    public String employeeEmail; 
 	    @EqualsAndHashCode.Exclude
 	    @ToString.Exclude
 	    @ManyToOne(cascade = CascadeType.ALL)

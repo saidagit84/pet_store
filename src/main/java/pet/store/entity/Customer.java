@@ -13,9 +13,9 @@ import java.util.Set;
 public class Customer {
 	    @Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	    private Long id;
-	    private String customerName; 
-	    private String customerEmail; 
+	    public Long id;
+	    public String customerName; 
+	    public String customerEmail; 
 	    @EqualsAndHashCode.Exclude
 	    @ToString.Exclude
 	    @ManyToMany(mappedBy = "customers", cascade = CascadeType.PERSIST)
