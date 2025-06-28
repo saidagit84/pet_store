@@ -24,6 +24,17 @@ public class PetStore {
 	    @ToString.Exclude
 	    @OneToMany(mappedBy = "petStore", cascade = CascadeType.ALL, orphanRemoval = true)
 		public Set<Employee> employees;
+	    
+	    public Long getPetStoreId() { return id; }
+	    public void setPetStoreId(Long id) { this.id = id; }
+	    public String getName() { return storeName; }
+	    public void setName(String name) { this.storeName = name; }
+	    public String getLocation() { return storeLocation; }
+	    public void setLocation(String location) { this.storeLocation = location; }
+	    public Set<Employee> getEmployees() { return employees; }
+	    public void setEmployees(Set<Employee> employees) { this.employees = employees; }
+	    public Set<Customer> getCustomers() { return customers; }
+	    public void setCustomers(Set<Customer> customers) { this.customers = customers; }
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

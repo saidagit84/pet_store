@@ -53,24 +53,61 @@ public class PetStoreData {
 	                .collect(Collectors.toSet());
 	        }
 	    }
+	    
 	    @Data
 	    @NoArgsConstructor
 	    public static class PetStoreCustomer {
-	        private Long id;
-	        private String name;
+	    	private Long CustomerId; 
+	        private String CustomerFirstName; 
+	        private String CustomerLastName; 
+	        private String CustomerEmail; 
 	        public PetStoreCustomer(Customer customer) {
-	            this.id = customer.id;
-	            this.name = customer.customerName;
+	            this.CustomerId = customer.CustomerId;
+	            this.CustomerFirstName = customer.getCustomerFirstName();
+	            this.CustomerLastName = customer.getCustomerLastName();
+	            this.CustomerEmail = customer.getCustomerEmail();
 	        }
+	        public Long getCustomerId() { return CustomerId; }
+		    public void setCustomerId(Long id) { this.CustomerId = id; }
+		    public String getCustomerFirstName() { return CustomerFirstName; }
+		    public void setCustomerFirstName(String CustomerFirstName) { this.CustomerFirstName = CustomerFirstName; }
+		    public String getCustomerLastName() { return CustomerLastName; }
+		    public void setCustomerLastName(String CustomerLastName) { this.CustomerLastName = CustomerLastName; }
+		    public String getCustomerEmail() { return CustomerEmail; }
+		    public void setCustomerEmail(String CustomerEmail) { this.CustomerEmail = CustomerEmail; }
 	    }
+	    
 	    @Data
 	    @NoArgsConstructor
 	    public static class PetStoreEmployee {
-	        private Long id;
-	        private String name;
+	        private Long EmployeeId; 
+	        private String EmployeeFirstName;
+	        private String EmployeeLastName; 
+	        private String EmployeeJobTitle; 
+	        private String EmployeePhone;
+
 	        public PetStoreEmployee(Employee employee) {
-	            this.id = employee.id;
-	            this.name = employee.employeeName;
+	            this.EmployeeId = employee.EmployeeId;
+	            this.EmployeeFirstName = employee.getEmployeeFirstName();
+	            this.EmployeeLastName = employee.getEmployeeLastName();
+	            this.EmployeeJobTitle = employee.getEmployeeJobTitle();
+	            this.EmployeePhone = employee.getEmployeePhone();
 	        }
+	        public Long getEmployeeId() {
+		        return EmployeeId;
+		    }
+		    public void setEmployeeId(Long EmployeeId) { this.EmployeeId = EmployeeId; }
+		    public String getEmployeeFirstName() { return EmployeeFirstName; }
+		    public void setEmployeeFirstName(String EmployeeFirstName) { this.EmployeeFirstName = EmployeeFirstName; }
+		    public String getEmployeeLastName() { return EmployeeLastName; }
+		    public void setEmployeeLastName(String EmployeeLastName) { this.EmployeeLastName = EmployeeLastName; }
+		    public String getEmployeeJobTitle() { return EmployeeJobTitle; }
+		    public void setEmployeeJobTitle(String EmployeeJobTitle) { this.EmployeeJobTitle = EmployeeJobTitle; }
+		    public String getEmployeePhone() { return EmployeePhone; }
+		    public void setEmployeePhone(String EmployeePhone) { this.EmployeePhone = EmployeePhone; }
+		   
+
+			
 	    }
+
 }
